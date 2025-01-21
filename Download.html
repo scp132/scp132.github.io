@@ -9,20 +9,35 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            color: #f1f1f1; /* Star White */
             background: radial-gradient(circle, #1a1a2e, #000000), url('https://www.w3schools.com/w3images/space.jpg'); /* Galaxy Background */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             height: 100vh;
-            overflow: hidden;
+            color: #f1f1f1; /* Star White */
         }
 
-        /* Button Style */
+        .header {
+            text-align: center;
+            padding: 100px 0;
+            font-size: 2.5rem;
+            color: #f1f1f1;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
         .btn {
             margin-top: 20px;
             background-color: #d6336c; /* Galaxy Pink */
-            color: #fff;
+            color: white;
             font-size: 1.2rem;
             padding: 15px 30px;
             border: none;
@@ -40,106 +55,25 @@
         .btn:focus {
             outline: none;
         }
-
-        h1 {
-            text-align: center;
-            font-size: 3rem;
-            margin-top: 50px;
-            color: #f1f1f1;
-        }
-
-        section {
-            padding: 60px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            border-radius: 15px;
-            margin-top: 100px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Move "Full Guide on Discord" link to top-left */
-        .guide-btn {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: #ffdf6c; /* Light Yellow */
-            color: #1a1a1a;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .guide-btn:hover {
-            background-color: #d6336c; /* Galaxy Pink */
-            color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .guide-btn:focus {
-            outline: none;
-        }
-
-        .link-btn {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            background-color: #5d2e85; /* Nebula Purple */
-            padding: 12px 20px;
-            border-radius: 10px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .link-btn:hover {
-            background-color: #d6336c; /* Galaxy Pink */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Add Telegram Button Style in Download Section */
-        .telegram-btn {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            background-color: #0088cc; /* Telegram Blue */
-            color: white;
-            padding: 12px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .telegram-btn:hover {
-            background-color: #00aaff; /* Lighter Telegram Blue */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .telegram-btn:focus {
-            outline: none;
-        }
     </style>
 </head>
 <body>
 
-    <h1>Download Solara V3</h1>
+    <div class="header">
+        <h1>Download Solara V3</h1>
+    </div>
 
-    <!-- Full Guide on Discord Link moved to Top Left -->
-    <a href="https://discord.gg/YA7B6btW25" class="guide-btn" target="_blank">Full Guide on Discord</a>
+    <div class="content">
+        <a href="https://drive.usercontent.google.com/download?id=1-ygsfQJwYtR_cxmLvk4PM67qco_6ZLuy&export=download&authuser=0" class="btn" target="_blank">Download Solara V3 (Google Drive)</a>
+    </div>
 
-    <section>
-        <p>Get Solara V3 from the following options:</p>
+    <div class="content">
+        <a href="https://discord.gg/YA7B6btW25" class="btn" target="_blank">Join Discord</a>
+    </div>
 
-        <a href="https://drive.usercontent.google.com/download?id=1-ygsfQJwYtR_cxmLvk4PM67qco_6ZLuy&export=download&authuser=0" class="link-btn" target="_blank">Download from Google Drive</a>
-        <a href="https://easyupload.io/djf25m" class="link-btn" target="_blank">Download from EasyUpload</a>
-        <a href="https://github.com/scp132/SolaraV3byClanKv" class="link-btn" target="_blank">Download from GitHub</a>
-        <!-- Download from Telegram Link added to Download Section -->
-        <a href="https://t.me/THESOLARAORG" class="telegram-btn" target="_blank">Download from Telegram</a>
-    </section>
+    <div class="content">
+        <a href="https://t.me/THESOLARAORG" class="btn" target="_blank">Download from Telegram</a>
+    </div>
 
 </body>
 </html>
