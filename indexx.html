@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn More</title>
     <style>
+        /* Keyframes for animating the galaxy background */
+        @keyframes galaxyAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -13,6 +23,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            animation: galaxyAnimation 30s infinite linear; /* Apply animation to the background */
             height: 100vh;
             color: #f1f1f1; /* Star White */
         }
