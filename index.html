@@ -84,6 +84,25 @@
             outline: none;
         }
 
+        /* Close button styling */
+        .close-btn {
+            margin-top: 40px;
+            background-color: #5d2e85; /* Nebula Purple */
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .close-btn:hover {
+            background-color: #d6336c; /* Galaxy Pink */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
         /* Floating stars effect */
         .stars {
             position: absolute;
@@ -112,6 +131,7 @@
         <h2>About Solara V3</h2>
         <p>Solara V3 is an advanced executor designed for enhanced performance and security. It provides cutting-edge capabilities for modern applications, offering seamless functionality and robust features that elevate user experiences.</p>
         <a href="#" class="btn">Learn More</a>
+        <button class="close-btn" onclick="window.close()">Close</button>
     </section>
 
 </body>
