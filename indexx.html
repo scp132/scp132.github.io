@@ -1,100 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn More</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional CSS file -->
+    <title>Solara V3 - Index</title>
     <style>
-        /* Basic Styling for the Page */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            color: #f1f1f1; /* Star White */
+            background: radial-gradient(circle, #1a1a2e, #000000), url('https://www.w3schools.com/w3images/space.jpg'); /* Galaxy Background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
+
+        /* Animation for text appearance */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
             text-align: center;
+            font-size: 3rem;
+            margin-top: 50px;
+            color: #f1f1f1;
+            animation: fadeIn 1s ease-out;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+
+        section {
+            padding: 60px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            margin-top: 100px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-out;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
+
+        h2 {
+            font-size: 2.5rem;
+            color: #d6336c; /* Galaxy Pink */
+            margin-bottom: 20px;
         }
-        nav ul li a {
-            color: white;
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #f1f1f1;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Button Style */
+        .btn {
+            margin-top: 40px;
+            background-color: #d6336c; /* Galaxy Pink */
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
         }
-        main {
-            padding: 20px;
+
+        .btn:hover {
+            background-color: #5d2e85; /* Nebula Purple */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
-        section {
-            background-color: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
+
+        .btn:focus {
+            outline: none;
         }
-        h1, h2 {
-            color: #333;
+
+        /* Go Back button styling */
+        .go-back-btn {
+            margin-top: 40px;
+            background-color: #5d2e85; /* Nebula Purple */
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+
+        .go-back-btn:hover {
+            background-color: #d6336c; /* Galaxy Pink */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
-        /* Icon Styling */
-        .icon {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
+
+        /* Floating stars effect */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            z-index: -1;
+            animation: moveStars 100s linear infinite;
         }
-        .program-info {
-            display: flex;
-            align-items: center;
+
+        @keyframes moveStars {
+            0% { background-position: 0 0; }
+            100% { background-position: 10000px 10000px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="learn-more.html">Learn More</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="stars"></div>
 
-    <main>
-        <section id="learn-more">
-            <h1>Learn More About Solara V3</h1>
-            <div class="program-info">
-                <!-- Solara V3 Icon -->
-                <img src="solara-v3-icon.png" alt="Solara V3 Icon" class="icon"> <!-- Replace with actual icon -->
-                <p><strong>Solara V3</strong> is a powerful executor designed to help you automate tasks efficiently and seamlessly. Whether you're looking to streamline your processes or improve performance, Solara V3 offers a variety of features to help you achieve your goals.</p>
-            </div>
-        </section>
+    <h1>Welcome to Solara V3</h1>
 
-        <section id="about">
-            <h2>About This Program</h2>
-            <p>Solara V3 is an advanced executor program that enhances your system's efficiency by automating tasks. With its user-friendly interface and powerful features, Solara V3 allows you to quickly execute complex actions with ease.</p>
-            <p>The program supports multiple use cases, from simple script execution to more complex automated workflows, making it a versatile tool for various types of users.</p>
-        </section>
+    <section>
+        <h2>About Solara V3</h2>
+        <p>Solara V3 is an advanced executor designed for enhanced performance and security. It provides cutting-edge capabilities for modern applications, offering seamless functionality and robust features that elevate user experiences.</p>
+        <button class="go-back-btn" onclick="window.history.back()">Go Back</button> <!-- Go Back Button -->
+    </section>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Your Website. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script> <!-- Optional JS file -->
 </body>
 </html>
