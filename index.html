@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Page</title>
+    <title>General Page - Solara V3</title>
     <style>
         body {
             margin: 0;
@@ -63,7 +63,7 @@
 
         /* Button Style */
         .btn {
-            margin-top: 40px;
+            margin-top: 20px;
             background-color: #d6336c; /* Galaxy Pink */
             color: #fff;
             font-size: 1.2rem;
@@ -118,6 +118,24 @@
             0% { background-position: 0 0; }
             100% { background-position: 10000px 10000px; }
         }
+
+        /* Links Styling */
+        .link-btn {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            background-color: #5d2e85; /* Nebula Purple */
+            padding: 12px 20px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background-color: #d6336c; /* Galaxy Pink */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -133,6 +151,9 @@
         <!-- Buttons -->
         <a href="https://scp132.github.io/indexx.html" class="btn" target="_blank">Learn More</a>
         <button class="go-back-btn" onclick="window.history.back()">Go Back</button> <!-- Go Back Button -->
+
+        <!-- New "Download" Button linking to Download Page -->
+        <a href="https://scp132.github.io/Download.html" class="btn" target="_blank">Download</a> <!-- New Download Button -->
     </section>
 
 </body>
