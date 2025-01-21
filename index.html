@@ -3,42 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galaxy Themed Site</title>
+    <title>Solara V3 - About</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             color: #f1f1f1; /* Star White */
             background: radial-gradient(circle, #1a1a2e, #000000), url('https://www.w3schools.com/w3images/space.jpg'); /* Galaxy Background */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Animation for text appearance */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 50px;
+            color: #f1f1f1;
+            animation: fadeIn 1s ease-out;
         }
 
         section {
-            padding: 40px;
+            padding: 60px;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-            border-radius: 10px;
-            margin-top: 50px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            margin-top: 100px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-out;
         }
 
         h2 {
-            color: #f1f1f1; /* Star White */
+            font-size: 2.5rem;
+            color: #d6336c; /* Galaxy Pink */
+            margin-bottom: 20px;
         }
 
         p {
-            color: #f1f1f1; /* Star White */
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #f1f1f1;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Button Style */
+        .btn {
+            margin-top: 40px;
+            background-color: #d6336c; /* Galaxy Pink */
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #5d2e85; /* Nebula Purple */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        /* Floating stars effect */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            z-index: -1;
+            animation: moveStars 100s linear infinite;
+        }
+
+        @keyframes moveStars {
+            0% { background-position: 0 0; }
+            100% { background-position: 10000px 10000px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="stars"></div>
+
+    <h1>Welcome to Solara V3</h1>
+
     <section>
-        <h2>Solara V3</h2>
-        <p>Solara V3 is an advanced executor designed for enhanced performance and security. It provides cutting-edge capabilities in various fields, making it a key tool for modern applications.</p>
+        <h2>About Solara V3</h2>
+        <p>Solara V3 is an advanced executor designed for enhanced performance and security. It provides cutting-edge capabilities for modern applications, offering seamless functionality and robust features that elevate user experiences.</p>
+        <a href="#" class="btn">Learn More</a>
     </section>
 
 </body>
