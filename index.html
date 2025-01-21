@@ -1,62 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Page Form</title>
+    <title>Galaxy Themed Site</title>
     <style>
         body {
+            background-color: #1a1a2e; /* Deep space black */
+            color: #f1f1f1; /* Star White */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: url('https://www.w3schools.com/w3images/space.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
         }
-        form {
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            width: 400px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
+
+        header {
+            background-color: #5d2e85; /* Nebula Purple */
+            padding: 20px;
             text-align: center;
         }
-        input, textarea, button {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 2px solid #fff;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 16px;
+
+        h1 {
+            color: #f1f1f1; /* Star White */
         }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #4e7e99; /* Cosmic Blue */
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d6336c; /* Galaxy Pink */
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
         button {
-            background-color: #4e4e4e;
-            color: #fff;
-            cursor: pointer;
+            background-color: #d6336c; /* Galaxy Pink */
+            color: #f1f1f1; /* Star White */
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
         button:hover {
-            background-color: #8b8b8b;
+            background-color: #5d2e85; /* Nebula Purple */
+        }
+
+        footer {
+            background-color: #1a1a2e; /* Deep space black */
+            color: #f1f1f1; /* Star White */
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-    <form action="your_backend_script.php" method="POST">
-        <h2>Contact Us</h2>
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-    </form>
+
+    <header>
+        <h1>Welcome to the Galaxy</h1>
+        <p>Explore the universe with us</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Discover the beauty of the cosmos</h2>
+        <p>Join us on an interstellar journey filled with stars, nebulae, and distant galaxies!</p>
+        <button>Start Exploring</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Galaxy Themed Site | All Rights Reserved</p>
+    </footer>
+
 </body>
 </html>
