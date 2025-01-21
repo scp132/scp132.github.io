@@ -5,55 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Solara V3</title>
     <style>
+        @keyframes galaxyAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle, #1a1a2e, #000000), url('https://www.w3schools.com/w3images/space.jpg'); /* Galaxy Background */
+            background: radial-gradient(circle, #1a1a2e, #000000), url('https://www.w3schools.com/w3images/space.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            animation: galaxyAnimation 30s infinite linear;
             height: 100vh;
-            color: #f1f1f1; /* Star White */
+            color: #f1f1f1;
         }
 
         .header {
             text-align: center;
-            padding: 100px 0;
-            font-size: 2.5rem;
+            padding: 100px 20px;
+            font-size: 3rem;
             color: #f1f1f1;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         .content {
             max-width: 800px;
             margin: 50px auto;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
         }
 
         .btn {
             margin-top: 20px;
-            background-color: #d6336c; /* Galaxy Pink */
+            background-color: #d6336c;
             color: white;
-            font-size: 1.2rem;
-            padding: 15px 30px;
+            font-size: 1.3rem;
+            padding: 18px 35px;
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
         }
 
         .btn:hover {
-            background-color: #5d2e85; /* Nebula Purple */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            background-color: #5d2e85;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
         }
 
         .btn:focus {
             outline: none;
+        }
+
+        .link-btn {
+            font-size: 1.2rem;
+            background-color: #5d2e85;
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background-color: #d6336c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
@@ -64,15 +90,15 @@
     </div>
 
     <div class="content">
-        <a href="https://drive.usercontent.google.com/download?id=1-ygsfQJwYtR_cxmLvk4PM67qco_6ZLuy&export=download&authuser=0" class="btn" target="_blank">Download Solara V3 (Google Drive)</a>
+        <h2>Choose a Download Link</h2>
+        <a href="https://drive.usercontent.google.com/download?id=1-ygsfQJwYtR_cxmLvk4PM67qco_6ZLuy&export=download&authuser=0" class="link-btn" target="_blank">Google Drive (No Update)</a>
+        <a href="https://discord.gg/YA7B6btW25" class="link-btn" target="_blank">Download from Discord (Always Update)</a>
+        <a href="https://easyupload.io/djf25m" class="link-btn" target="_blank">EasyUpload (No Update)</a>
+        <a href="https://github.com/scp132/SolaraV3byClanKv" class="link-btn" target="_blank">GitHub (Always Update)</a>
     </div>
 
     <div class="content">
-        <a href="https://discord.gg/YA7B6btW25" class="btn" target="_blank">Join Discord</a>
-    </div>
-
-    <div class="content">
-        <a href="https://t.me/THESOLARAORG" class="btn" target="_blank">Download from Telegram</a>
+        <a href="https://scp132.github.io/Download.html" class="btn">Go Back</a>
     </div>
 
 </body>
