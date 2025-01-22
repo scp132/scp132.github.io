@@ -137,15 +137,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
-        /* Visitor count section - Positioned at the top right */
-        .visitor-count {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
     </style>
 </head>
 <body>
@@ -160,11 +151,6 @@
         <h1>Ｃｌａｎ | Ｋｖ</h1>
     </div>
 
-    <!-- Visitor Count Section - Top Right -->
-    <div class="visitor-count">
-        Your current visitor count is: <span id="visitor-count">Loading...</span>
-    </div>
-
     <div class="about-us">
         <h2 class="rgb-text">About Us</h2>
         <p class="rgb-text">Our most popular tool is <strong>Solara V3</strong>, a universal cheat that supports a wide range of games, including Roblox, and provides players with powerful tools for modifying gameplay. Solara V3 allows you to gain an advantage in any game, automate actions, and unlock hidden features, making your gaming experience more exciting and personalized.</p>
@@ -174,18 +160,6 @@
             <a href="https://scp132.github.io/Download.html" class="btn">Download</a>
         </div>
     </div>
-
-    <script>
-        // Fetch visitor count from the PHP script
-        fetch('visitor_count.php')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('visitor-count').innerText = data;
-            })
-            .catch(error => {
-                console.error('Error fetching visitor count:', error);
-            });
-    </script>
 
 </body>
 </html>
