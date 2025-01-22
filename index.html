@@ -46,7 +46,15 @@
             }
         }
 
-        /* Title Text */
+        /* Centered Header with Full-width Characters */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            text-align: center;
+        }
+
         .header h1 {
             font-size: 3rem;
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
@@ -54,12 +62,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: rgbText 5s infinite linear;
+            margin: 0;
         }
 
-        @keyframes rgbText {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Applying full-width characters to Clan | Kv */
+        .header h1 {
+            font-family: "Courier New", monospace;
         }
 
         /* RGB Effect for All Text (Purple tones) */
@@ -71,10 +79,16 @@
             animation: purpleRGB 5s infinite linear;
         }
 
-        @keyframes purpleRGB {
+        @keyframes rgbText {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        /* Font with regional indicators for About Us */
+        @font-face {
+            font-family: 'RegionalIndicators';
+            src: url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
         }
 
         .about-us {
@@ -84,7 +98,13 @@
             margin: 0 auto;
         }
 
-        .about-us h2,
+        .about-us h2 {
+            font-family: 'RegionalIndicators', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
         .about-us p {
             font-size: 1.2rem;
         }
@@ -120,8 +140,9 @@
         <div class="stars"></div>
     </div>
 
+    <!-- Centered Header with Full-width Characters -->
     <div class="header">
-        <h1>Clan | Kv</h1>
+        <h1>Ｃｌａｎ | Ｋｖ</h1>
     </div>
 
     <div class="about-us">
