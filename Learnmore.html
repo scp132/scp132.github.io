@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clan | Kv</title>
+    <title>Learn More | Solara V3</title>
     <style>
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2b2a2a, #1f1d1d);
             color: white;
-            overflow: hidden;
-            background-color: black;
+            overflow-x: hidden;
             text-align: center;
+            padding: 0;
         }
 
         /* Live Background */
@@ -23,7 +24,7 @@
             height: 100%;
             background: radial-gradient(circle at center, #1a0023, #090012);
             background-size: 200% 200%;
-            animation: gradientBackground 10s ease infinite;
+            animation: gradientBackground 15s ease infinite;
             z-index: -1;
         }
 
@@ -39,173 +40,136 @@
             }
         }
 
-        .background .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png');
-            background-size: cover;
-            opacity: 0.5;
-            animation: moveStars 30s linear infinite;
-        }
-
-        @keyframes moveStars {
-            from {
-                transform: translateX(0) translateY(0);
-            }
-            to {
-                transform: translateX(-50%) translateY(-50%);
-            }
-        }
-
         /* Header */
         .header {
-            padding: 20px;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
-            background-size: 400% 100%;
+            padding: 40px;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #ff0077, #fcbf49, #00d2d1);
+            background-size: 300% 100%;
             -webkit-background-clip: text;
             color: transparent;
-            animation: rgbText 5s infinite linear;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: gradientText 5s infinite linear;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
         }
 
-        @keyframes rgbText {
+        @keyframes gradientText {
             0% {
-                background-position: 0% 50%;
+                background-position: 100% 0%;
             }
             50% {
-                background-position: 100% 50%;
+                background-position: 0% 100%;
             }
             100% {
-                background-position: 0% 50%;
+                background-position: 100% 0%;
             }
         }
 
-        /* Content */
+        /* Main content section */
         .content {
-            font-weight: bold;
-            padding: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
         }
 
-        .btn {
+        .content h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff66b2;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .content p {
             font-size: 1.2rem;
+            line-height: 1.6;
+            color: #c1c1c1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .content ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.2rem;
+            color: #f1f1f1;
+        }
+
+        .content ul li {
+            margin: 15px 0;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            font-size: 1.5rem;
             background-color: #5d2e85;
-            padding: 12px 20px;
+            padding: 15px 30px;
             border-radius: 8px;
             color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .btn:hover {
             background-color: #d6336c;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            transform: scale(1.1); /* Button grows on hover */
+            transform: scale(1.1); /* Smoothly grow the button */
         }
 
-        /* About Us Section */
-        .about-us {
-            text-align: center;
-            font-size: 1.2rem;
-            padding: 20px;
-            margin-top: 30px;
+        .btn:active {
+            transform: scale(1); /* Reset size on click */
         }
 
-        .about-us h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #d6336c;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-
-        .about-us p {
-            font-weight: bold;
-            color: #ffb3e6;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-        }
-
-        .about-us ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.2rem;
-        }
-
-        .about-us ul li {
-            margin-bottom: 10px;
-        }
-
-        /* Custom Scrollbar */
-        body {
-            overflow: auto;
-        }
-
+        /* Scrollbar styling */
         ::-webkit-scrollbar {
-            width: 8px; /* Smaller scrollbar width */
-            height: 8px; /* Smaller scrollbar height */
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.7);
         }
-
     </style>
 </head>
 <body>
 
     <!-- Live Background -->
-    <div class="background">
-        <div class="stars"></div>
-    </div>
+    <div class="background"></div>
 
     <!-- Header -->
     <div class="header">
-        <h1>Clan | Kv</h1> <!-- Clan | Kv text with RGB gradient -->
+        Learn More About Solara V3
     </div>
 
-    <!-- About Us Section -->
-    <div class="about-us">
-        <h2>О Solara V3 Cheat для всех игр 🎮</h2>
+    <!-- Content Section -->
+    <div class="content">
+        <h2>What is Solara V3?</h2>
         <p>
-            Solara V3 — это универсальный чит, который поддерживает множество игр, включая Roblox, и предоставляет игрокам мощные инструменты для модификации игрового процесса. С помощью Solara V3 вы можете получить преимущество в любой игре, автоматизировать действия и использовать скрытые функции, что делает игровой процесс более захватывающим и персонализированным.
+            Solara V3 is an all-in-one cheat software for various popular games. It’s designed to enhance your gaming experience by providing you with advanced features that give you an edge in the game. Whether you want to improve your performance or unlock hidden capabilities, Solara V3 has you covered.
         </p>
 
-        <h2>Ключевые особенности:</h2>
+        <h2>Key Features:</h2>
         <ul>
-            <li><strong>Поддержка множества игр 🎮:</strong> Solara V3 совместим с широким спектром игр на различных платформах, позволяя использовать читы и модификации в самых популярных проектах.</li>
-            <li><strong>Мгновенная активация читов ⚡:</strong> Читы активируются быстро, обеспечивая мгновенное преимущество и возможность сразу же внедрять изменения в игру.</li>
-            <li><strong>Гибкость и настройка ⚙️:</strong> Каждый чит можно настроить в зависимости от ваших предпочтений, позволяя адаптировать его под любые игровые задачи и цели.</li>
-            <li><strong>Безопасность и анонимность 🔒:</strong> Solara V3 включает продвинутые методы защиты, которые минимизируют риски блокировки аккаунта и обеспечивают безопасное использование.</li>
-            <li><strong>Интуитивно понятный интерфейс 🖥️:</strong> Простота интерфейса позволяет легко настроить читы и начать использовать их даже новичкам.</li>
-            <li><strong>Оптимизация производительности 🏎️:</strong> Благодаря встроенной оптимизации, Solara V3 обеспечивает плавное использование читов без потери FPS и других проблем с производительностью.</li>
+            <li><strong>Cross-Game Support:</strong> Works with a variety of games across different platforms, ensuring your gaming experience is enhanced wherever you play.</li>
+            <li><strong>Instant Activation:</strong> Activate cheats within seconds, giving you a quick advantage.</li>
+            <li><strong>Customizable Settings:</strong> Tailor cheats to suit your playstyle with adjustable settings and preferences.</li>
+            <li><strong>Enhanced Security:</strong> Solara V3 includes advanced anti-detection features to keep you safe and prevent your account from being banned.</li>
+            <li><strong>Easy-to-Use Interface:</strong> A user-friendly interface that’s simple for beginners and experienced players alike.</li>
         </ul>
 
+        <h2>Why Choose Solara V3?</h2>
         <p>
-            Solara V3 — это идеальный инструмент для тех, кто хочет расширить возможности в играх и получить преимущество благодаря читам и модификациям, с гарантией безопасности и эффективности. ✨
+            Solara V3 is your ultimate gaming companion, offering a secure, customizable, and highly optimized solution to take your gaming experience to the next level. Whether you want to unlock new features or simply enjoy the game in a new way, Solara V3 is here to provide all that and more.
         </p>
-    </div>
 
-    <!-- Content -->
-    <div class="content">
-        <a href="https://scp132.github.io/" class="btn">Go Back</a>
+        <a href="https://scp132.github.io/" class="btn">Get Started</a>
     </div>
 
 </body>
