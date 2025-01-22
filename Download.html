@@ -107,12 +107,18 @@
             min-width: 220px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             position: relative;
+            overflow: hidden;
         }
 
         .link-btn:hover {
             background-color: #d6336c;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
             transform: scale(1.1); /* Adds a scaling effect */
+        }
+
+        .link-btn:active {
+            transform: scale(0.95); /* Slight shrink on click */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
         }
 
         .link-btn::before {
@@ -131,6 +137,27 @@
         .link-btn:hover::before {
             transform: translate(-50%, -50%) scale(1);
             background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Ripple effect */
+        .link-btn:active::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
         }
 
         /* Go Back Button (Top Left) */
