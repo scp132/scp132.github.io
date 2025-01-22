@@ -8,7 +8,6 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle, #1a0023, #090012); /* Same background as General Page */
             color: white;
             display: flex;
             flex-direction: column;
@@ -16,40 +15,22 @@
             justify-content: center;
             min-height: 100vh;
             position: relative;
-            font-weight: bold; /* Bold applied to all text */
             overflow: hidden;
+            background: radial-gradient(circle, #1a0023, #090012);
+            background-size: 200% 200%;
+            animation: gradientBackground 10s ease infinite;
+            font-weight: bold;
         }
 
-        /* Live Background */
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, #1a0023, #090012);
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .background .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Added backup texture */
-            background-size: cover;
-            opacity: 0.5;
-            animation: moveStars 30s linear infinite;
-        }
-
-        @keyframes moveStars {
-            from {
-                transform: translateX(0) translateY(0);
+        @keyframes gradientBackground {
+            0% {
+                background-position: 100% 0%;
             }
-            to {
-                transform: translateX(-50%) translateY(-50%);
+            50% {
+                background-position: 0% 100%;
+            }
+            100% {
+                background-position: 100% 0%;
             }
         }
 
@@ -57,16 +38,18 @@
         .header {
             text-align: center;
             margin-bottom: 40px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
 
         .header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: bold;
-            color: #fff;
             background: linear-gradient(90deg, #ff00f7, #4800ff);
             background-size: 300% 100%;
             -webkit-background-clip: text;
+            color: transparent;
             animation: gradient-text 5s linear infinite;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
 
         @keyframes gradient-text {
@@ -90,12 +73,18 @@
             width: 80%;
             max-width: 700px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .content:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
         }
 
         .content h2 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .button-group {
@@ -114,14 +103,32 @@
             color: white;
             text-decoration: none;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease-in-out;
             min-width: 220px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 8px;
         }
 
         .link-btn:hover {
             background-color: #d6336c;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+        }
+
+        .link-btn:hover::before {
+            opacity: 1;
         }
 
         /* Go Back Button (Top Left) */
@@ -136,11 +143,11 @@
             position: absolute;
             top: 20px;
             left: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .go-back:hover {
             background-color: #5d2e85;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         /* Full Guide Button */
@@ -154,11 +161,11 @@
             transition: all 0.3s ease;
             position: absolute;
             bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .full-guide:hover {
             background-color: #00aaff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         /* Modal Styles */
@@ -181,6 +188,18 @@
             border-radius: 10px;
             color: white;
             text-align: center;
+            animation: modalAnimation 2s ease;
+        }
+
+        @keyframes modalAnimation {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .modal-content h2 {
@@ -234,9 +253,7 @@
 <body>
 
     <!-- Live Background -->
-    <div class="background">
-        <div class="stars"></div>
-    </div>
+    <div class="background"></div>
 
     <!-- Go Back Button -->
     <a href="https://scp132.github.io/" class="go-back">Go Back</a>
