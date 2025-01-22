@@ -68,23 +68,23 @@
         .header h1 {
             font-size: 3rem;
             font-weight: bold;
-            background: linear-gradient(90deg, #ff00f7, #4800ff);
-            background-size: 300% 100%;
+            background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400% 100%;
             -webkit-background-clip: text;
             color: transparent;
-            animation: gradient-text 5s linear infinite;
+            animation: rgbText 5s infinite linear;
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
 
-        @keyframes gradient-text {
+        @keyframes rgbText {
             0% {
-                background-position: 300% 0;
+                background-position: 0% 50%;
             }
             50% {
-                background-position: -300% 0;
+                background-position: 100% 50%;
             }
             100% {
-                background-position: 300% 0;
+                background-position: 0% 50%;
             }
         }
 
