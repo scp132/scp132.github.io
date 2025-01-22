@@ -109,6 +109,7 @@
         .btn:hover {
             background-color: #d6336c;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transform: scale(1.1); /* Button grows on hover */
         }
 
         /* About Us Section */
@@ -140,6 +141,30 @@
 
         .about-us ul li {
             margin-bottom: 10px;
+        }
+
+        /* Custom Scrollbar */
+        body {
+            overflow: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px; /* Smaller scrollbar width */
+            height: 8px; /* Smaller scrollbar height */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
     </style>
