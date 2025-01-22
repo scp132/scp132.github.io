@@ -46,11 +46,7 @@
             }
         }
 
-        .header {
-            text-align: center;
-            padding: 20px;
-        }
-
+        /* Title Text */
         .header h1 {
             font-size: 3rem;
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
@@ -66,6 +62,21 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* RGB Effect for All Text (Purple tones) */
+        .rgb-text {
+            background: linear-gradient(90deg, #5e2c82, #752ea6, #a86dff, #752ea6, #5e2c82);
+            background-size: 400% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: purpleRGB 5s infinite linear;
+        }
+
+        @keyframes purpleRGB {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .about-us {
             text-align: center;
             padding: 40px 20px;
@@ -73,15 +84,9 @@
             margin: 0 auto;
         }
 
-        .about-us h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
+        .about-us h2,
         .about-us p {
             font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
         }
 
         .btn-group {
@@ -120,9 +125,9 @@
     </div>
 
     <div class="about-us">
-        <h2>About Us</h2>
-        <p>Our most popular tool is <strong>Solara V3</strong>, a universal cheat that supports a wide range of games, including Roblox, and provides players with powerful tools for modifying gameplay. Solara V3 allows you to gain an advantage in any game, automate actions, and unlock hidden features, making your gaming experience more exciting and personalized.</p>
-        <p>Learn more about Solara V3 or download it now by clicking the buttons below.</p>
+        <h2 class="rgb-text">About Us</h2>
+        <p class="rgb-text">Our most popular tool is <strong>Solara V3</strong>, a universal cheat that supports a wide range of games, including Roblox, and provides players with powerful tools for modifying gameplay. Solara V3 allows you to gain an advantage in any game, automate actions, and unlock hidden features, making your gaming experience more exciting and personalized.</p>
+        <p class="rgb-text">Learn more about Solara V3 or download it now by clicking the buttons below.</p>
         <div class="btn-group">
             <a href="https://scp132.github.io/Learnmore.html" class="btn">Learn More</a>
             <a href="https://scp132.github.io/Download.html" class="btn">Download</a>
