@@ -95,8 +95,9 @@
             margin-top: 20px;
         }
 
-        .link-btn, .go-back, .full-guide {
+        .link-btn {
             font-size: 1.1rem;
+            background-color: #5d2e85;
             padding: 15px 30px;
             border-radius: 8px;
             color: white;
@@ -108,7 +109,7 @@
             position: relative;
         }
 
-        .link-btn::before, .go-back::before, .full-guide::before {
+        .link-btn::before {
             content: '';
             position: absolute;
             top: 0;
@@ -121,54 +122,50 @@
             border-radius: 8px;
         }
 
-        .link-btn:hover, .go-back:hover, .full-guide:hover {
+        .link-btn:hover {
             background-color: #d6336c;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
         }
 
-        .link-btn:hover::before, .go-back:hover::before, .full-guide:hover::before {
+        .link-btn:hover::before {
             opacity: 1;
         }
 
-        /* Specific Button Colors */
+        /* Go Back Button (Top Left) */
         .go-back {
+            font-size: 1.2rem;
             background-color: #d6336c;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .go-back:hover {
             background-color: #5d2e85;
         }
 
+        /* Full Guide Button */
         .full-guide {
+            font-size: 1.2rem;
             background-color: #00f5ff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .full-guide:hover {
             background-color: #00aaff;
-        }
-
-        .link-btn {
-            background-color: #5d2e85;
-        }
-
-        .link-btn:hover {
-            background-color: #d6336c;
-        }
-
-        /* Mediafire Button */
-        #mediafireBtn {
-            background-color: #5d2e85;
-            padding: 15px 30px;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            min-width: 220px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-        }
-
-        #mediafireBtn:hover {
-            background-color: #d6336c;
         }
 
         /* Modal Styles */
@@ -300,20 +297,20 @@
         // Get the <span> element that closes the modal
         var closeModal = document.getElementById("closeModal");
 
-        // When the user clicks the button, open the modal
-        mediafireBtn.onclick = function () {
-            modal.style.display = "flex";
+        // When the user clicks the Mediafire button, open the modal
+        mediafireBtn.onclick = function() {
+            modal.style.display = "flex"; // Show the modal
         }
 
-        // When the user clicks on <span> (x), close the modal
-        closeModal.onclick = function () {
-            modal.style.display = "none";
+        // When the user clicks on the close button, close the modal
+        closeModal.onclick = function() {
+            modal.style.display = "none"; // Hide the modal
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
+        window.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = "none";
+                modal.style.display = "none"; // Hide the modal
             }
         }
     </script>
