@@ -31,7 +31,8 @@
             left: 0;
             width: 200%;
             height: 200%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Backup gradient */
+            background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Added backup texture */
+            background-size: cover;
             opacity: 0.5;
             animation: moveStars 30s linear infinite;
         }
@@ -67,6 +68,8 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
         }
 
         .btn:hover {
