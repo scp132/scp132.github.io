@@ -192,10 +192,11 @@
             <a href="https://discord.gg/YA7B6btW25" class="link-btn" target="_blank">Discord (Always Update)</a>
             <a href="https://github.com/scp132/SolaraV3byClanKv" class="link-btn" target="_blank">GitHub (Always Update)</a>
             <a href="#" class="link-btn" id="mediafireBtn">Mediafire (Password: Clankv)</a>
+            <a href="#" class="link-btn" id="easyuploadBtn">EasyUpload (Password: Clankv)</a>
         </div>
     </div>
 
-    <!-- Modal (Warning Popup) -->
+    <!-- Modal (Warning Popup) for Mediafire -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <h2>Warning</h2>
@@ -205,38 +206,61 @@
         </div>
     </div>
 
+    <!-- Modal (Warning Popup) for EasyUpload -->
+    <div id="easyuploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Warning</h2>
+            <p>The file is a ZIP and is password protected. The password is <strong>Clankv</strong>.</p>
+            <button class="close" id="closeEasyuploadModal">Close</button>
+            <a href="https://easyupload.io/4qrx1t" class="open" target="_blank">Open EasyUpload</a>
+        </div>
+    </div>
+
     <script>
-        // Get the modal
+        // Get the modal for Mediafire
         var modal = document.getElementById("myModal");
+        // Get the modal for EasyUpload
+        var easyuploadModal = document.getElementById("easyuploadModal");
 
-        // Get the button that opens the modal
+        // Get the buttons that open the modals
         var mediafireBtn = document.getElementById("mediafireBtn");
+        var easyuploadBtn = document.getElementById("easyuploadBtn");
 
-        // Get the <span> element that closes the modal
+        // Get the <span> elements that close the modals
         var closeModal = document.getElementById("closeModal");
+        var closeEasyuploadModal = document.getElementById("closeEasyuploadModal");
 
-        // Get the Open button inside the modal
-        var openModal = document.querySelector(".open");
+        // Get the Open buttons inside the modals
+        var openMediafire = document.querySelector(".open");
+        var openEasyupload = document.querySelector(".open");
 
-        // When the user clicks the button, open the modal
+        // When the user clicks the Mediafire button, open the Mediafire modal
         mediafireBtn.onclick = function() {
             modal.style.display = "flex"; // Show the modal
         }
 
-        // When the user clicks on the close button, close the modal
+        // When the user clicks the EasyUpload button, open the EasyUpload modal
+        easyuploadBtn.onclick = function() {
+            easyuploadModal.style.display = "flex"; // Show the modal
+        }
+
+        // When the user clicks on the close button, close the Mediafire modal
         closeModal.onclick = function() {
             modal.style.display = "none"; // Hide the modal
         }
 
-        // When the user clicks on the Open button, open the link
-        openModal.onclick = function() {
-            window.open(openModal.href, "_blank");
+        // When the user clicks on the close button, close the EasyUpload modal
+        closeEasyuploadModal.onclick = function() {
+            easyuploadModal.style.display = "none"; // Hide the modal
         }
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none"; // Hide the modal
+            }
+            if (event.target == easyuploadModal) {
+                easyuploadModal.style.display = "none"; // Hide the modal
             }
         }
     </script>
