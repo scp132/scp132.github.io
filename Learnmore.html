@@ -88,12 +88,7 @@
             }
         }
 
-        /* Content */
-        .content {
-            font-weight: bold;
-            padding: 20px;
-        }
-
+        /* Button Styling */
         .btn {
             font-size: 1.2rem;
             background-color: #5d2e85;
@@ -104,11 +99,34 @@
             transition: all 0.3s ease;
             display: inline-block;
             margin-top: 20px;
+            position: relative;
+            overflow: hidden;
         }
 
+        /* Button Hover Effects */
         .btn:hover {
             background-color: #d6336c;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transform: scale(1.1); /* Adds a scaling effect */
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: #ffffff;
+            transition: all 0.4s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        /* Expand the circle on hover */
+        .btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         /* About Us Section */
