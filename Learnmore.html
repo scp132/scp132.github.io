@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clan | Kv</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/xyAGLiy.png" type="image/png">
+    
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             color: white;
             overflow: hidden;
             background-color: black;
-            text-align: center;
         }
 
         /* Live Background */
@@ -60,32 +63,84 @@
             }
         }
 
-        /* Header */
+        /* Centered Header with Full-width Characters (No bold for Clan | Kv) */
         .header {
-            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            text-align: center;
         }
 
         .header h1 {
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 4rem;
             background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
             background-size: 400% 100%;
             -webkit-background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
             animation: rgbText 5s infinite linear;
+            margin: 0;
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
 
+        /* Applying full-width characters to Clan | Kv */
+        .header h1 {
+            font-family: "Courier New", monospace;
+        }
+
+        /* RGB Effect for All Text (Purple tones) */
+        .rgb-text {
+            background: linear-gradient(90deg, #5e2c82, #752ea6, #a86dff, #752ea6, #5e2c82);
+            background-size: 400% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: purpleRGB 5s infinite linear;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
         @keyframes rgbText {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Font with regional indicators for About Us */
+        @font-face {
+            font-family: 'RegionalIndicators';
+            src: url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+        }
+
+        .about-us {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        .about-us h2 {
+            font-family: 'RegionalIndicators', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #d6336c;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .about-us p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffb3e6;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
         }
 
         /* Button Styling */
@@ -98,7 +153,8 @@
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
-            margin-top: 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
         }
@@ -106,7 +162,7 @@
         /* Button Hover Effects */
         .btn:hover {
             background-color: #d6336c;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
             transform: scale(1.1); /* Adds a scaling effect */
         }
 
@@ -129,35 +185,20 @@
             background-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* About Us Section */
-        .about-us {
-            text-align: center;
-            font-size: 1.2rem;
-            padding: 20px;
-            margin-top: 30px;
-        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
 
-        .about-us h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #d6336c;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
+            .about-us h2 {
+                font-size: 2rem;
+            }
 
-        .about-us p {
-            font-weight: bold;
-            color: #ffb3e6;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-        }
-
-        .about-us ul {
-            list-style: none;
-            padding: 0;
-            font-size: 1.2rem;
-        }
-
-        .about-us ul li {
-            margin-bottom: 10px;
+            .btn {
+                font-size: 1rem;
+                padding: 10px 18px;
+            }
         }
 
     </style>
@@ -169,36 +210,19 @@
         <div class="stars"></div>
     </div>
 
-    <!-- Header -->
+    <!-- Centered Header with Full-width Characters (No bold for Clan | Kv) -->
     <div class="header">
-        <h1>Clan | Kv</h1> <!-- Clan | Kv text with RGB gradient -->
+        <h1>Ｃｌａｎ | Ｋｖ</h1>
     </div>
 
-    <!-- About Us Section -->
     <div class="about-us">
-        <h2>О Solara V3 Cheat для всех игр 🎮</h2>
-        <p>
-            Solara V3 — это универсальный чит, который поддерживает множество игр, включая Roblox, и предоставляет игрокам мощные инструменты для модификации игрового процесса. С помощью Solara V3 вы можете получить преимущество в любой игре, автоматизировать действия и использовать скрытые функции, что делает игровой процесс более захватывающим и персонализированным.
-        </p>
-
-        <h2>Ключевые особенности:</h2>
-        <ul>
-            <li><strong>Поддержка множества игр 🎮:</strong> Solara V3 совместим с широким спектром игр на различных платформах, позволяя использовать читы и модификации в самых популярных проектах.</li>
-            <li><strong>Мгновенная активация читов ⚡:</strong> Читы активируются быстро, обеспечивая мгновенное преимущество и возможность сразу же внедрять изменения в игру.</li>
-            <li><strong>Гибкость и настройка ⚙️:</strong> Каждый чит можно настроить в зависимости от ваших предпочтений, позволяя адаптировать его под любые игровые задачи и цели.</li>
-            <li><strong>Безопасность и анонимность 🔒:</strong> Solara V3 включает продвинутые методы защиты, которые минимизируют риски блокировки аккаунта и обеспечивают безопасное использование.</li>
-            <li><strong>Интуитивно понятный интерфейс 🖥️:</strong> Простота интерфейса позволяет легко настроить читы и начать использовать их даже новичкам.</li>
-            <li><strong>Оптимизация производительности 🏎️:</strong> Благодаря встроенной оптимизации, Solara V3 обеспечивает плавное использование читов без потери FPS и других проблем с производительностью.</li>
-        </ul>
-
-        <p>
-            Solara V3 — это идеальный инструмент для тех, кто хочет расширить возможности в играх и получить преимущество благодаря читам и модификациям, с гарантией безопасности и эффективности. ✨
-        </p>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <a href="https://scp132.github.io/" class="btn">Go Back</a>
+        <h2 class="rgb-text">About Us</h2>
+        <p class="rgb-text">Our most popular tool is <strong>Solara V3</strong>, a universal cheat that supports a wide range of games, including Roblox, and provides players with powerful tools for modifying gameplay. Solara V3 allows you to gain an advantage in any game, automate actions, and unlock hidden features, making your gaming experience more exciting and personalized.</p>
+        <p class="rgb-text">Learn more about Solara V3 or download it now by clicking the buttons below.</p>
+        <div class="btn-group">
+            <a href="https://scp132.github.io/Learnmore.html" class="btn">Learn More</a>
+            <a href="https://scp132.github.io/Download.html" class="btn">Download</a>
+        </div>
     </div>
 
 </body>
