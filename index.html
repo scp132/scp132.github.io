@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             color: white;
             overflow: hidden;
+            background-color: black; /* Added for fallback */
         }
 
         /* Live Background */
@@ -30,7 +31,7 @@
             left: 0;
             width: 200%;
             height: 200%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Backup gradient */
             opacity: 0.5;
             animation: moveStars 30s linear infinite;
         }
