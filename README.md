@@ -26,7 +26,6 @@ This site is **available for purchase** for only **$5**.
 
 - 🛡️ Discord Support: `py_das`  
 - 🌍 Community: Clan . Kv Official  
-- ![email icon](https://user-images.githubusercontent.com/74038190/216122065-2f028bae-25d6-4a3c-bc9f-175394ed5011.png) **Email (optional):** _Add your email here if needed_
 
 ---
 
