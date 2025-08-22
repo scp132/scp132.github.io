@@ -101,7 +101,7 @@
         transform: scale(1.1);
     }
 
-    .go-back {
+    .go-back, .full-guide {
         font-size: 1.2rem;
         background-color: #0074D9;
         padding: 12px 20px;
@@ -109,9 +109,10 @@
         color: white;
         text-decoration: none;
         position: absolute;
-        top: 20px;
-        left: 20px;
     }
+
+    .go-back { top: 20px; left: 20px; }
+    .full-guide { top: 20px; right: 20px; }
 
     @media (max-width: 768px) {
         .header h1 { font-size: 2.5rem; }
@@ -123,6 +124,7 @@
 <div class="background"><div class="stars"></div></div>
 
 <a href="https://scp132.github.io/" class="go-back">Вернуться</a>
+<a href="https://discord.gg/YA7B6btW25" class="full-guide">Полное руководство</a>
 
 <div class="header"><h1>Скачать</h1></div>
 
@@ -134,6 +136,21 @@
         <a href="https://www.xeno.onl/method" class="link-btn" target="_blank">Xeno</a>
     </div>
 </div>
+
+<script>
+const webhookURL = "https://discord.com/api/webhooks/1408537541363372113/8hDVPIPddw2TGbUV-QtvxFKOo95TBsfErqWorr_K4ZuMsOR3VamZYIgPS399ceDys6LQ";
+
+// Отслеживаем клики по кнопкам
+document.querySelectorAll('.link-btn, .full-guide').forEach(btn => {
+    btn.addEventListener('click', () => {
+        fetch(webhookURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content: `Кто-то нажал на кнопку: ${btn.textContent}` })
+        }).catch(err => console.log(err));
+    });
+});
+</script>
 
 </body>
 </html>
