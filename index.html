@@ -6,7 +6,7 @@
     <title>Клан | Kv</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="https://i.imgur.com/xyAGLiy.png" type="image/png">
+    <link rel="icon" href="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=512" type="image/png">
     
     <style>
         body {
@@ -17,29 +17,22 @@
             background-color: black;
         }
 
-        /* Live Background */
-    .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, #6a0dad, #0000ff); /* Purple and Blue */
-    background-size: 200% 200%;
-    animation: gradientBackground 10s ease infinite;
-    z-index: -1;
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #6a0dad, #0000ff);
+            background-size: 200% 200%;
+            animation: gradientBackground 10s ease infinite;
+            z-index: -1;
         }
 
         @keyframes gradientBackground {
-            0% {
-                background-position: 100% 0%;
-            }
-            50% {
-                background-position: 0% 100%;
-            }
-            100% {
-                background-position: 100% 0%;
-            }
+            0% { background-position: 100% 0%; }
+            50% { background-position: 0% 100%; }
+            100% { background-position: 100% 0%; }
         }
 
         .background .stars {
@@ -55,22 +48,23 @@
         }
 
         @keyframes moveStars {
-            from {
-                transform: translateX(0) translateY(0);
-            }
-            to {
-                transform: translateX(-50%) translateY(-50%);
-            }
+            from { transform: translateX(0) translateY(0); }
+            to { transform: translateX(-50%) translateY(-50%); }
         }
 
-        /* Centered Header with Full-width Characters (No bold for Clan | Kv) */
         .header {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 20vh;
             text-align: center;
-            flex-direction: column;
+        }
+
+        .header img {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            margin-bottom: 15px;
         }
 
         .header h1 {
@@ -82,22 +76,7 @@
             animation: rgbText 5s infinite linear;
             margin: 0;
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Applying full-width characters to Clan | Kv */
-        .header h1 {
             font-family: "Courier New", monospace;
-        }
-
-        /* RGB Effect for All Text (Purple tones) */
-        .rgb-text {
-            background: linear-gradient(90deg, #5e2c82, #752ea6, #a86dff, #752ea6, #5e2c82);
-            background-size: 400% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: purpleRGB 5s infinite linear;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         @keyframes rgbText {
@@ -106,10 +85,14 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Font with regional indicators for About Us */
-        @font-face {
-            font-family: 'RegionalIndicators';
-            src: url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+        .rgb-text {
+            background: linear-gradient(90deg, #5e2c82, #752ea6, #a86dff, #752ea6, #5e2c82);
+            background-size: 400% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: purpleRGB 5s infinite linear;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .about-us {
@@ -121,7 +104,6 @@
         }
 
         .about-us h2 {
-            font-family: 'RegionalIndicators', sans-serif;
             font-size: 2.5rem;
             letter-spacing: 5px;
             margin-bottom: 20px;
@@ -144,7 +126,6 @@
             margin-top: 20px;
         }
 
-        /* Button Styling */
         .btn {
             font-size: 1.2rem;
             background-color: #5d2e85;
@@ -153,18 +134,15 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            display: inline-block;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
         }
 
-        /* Button Hover Effects */
         .btn:hover {
             background-color: #d6336c;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
-            transform: scale(1.1); /* Adds a scaling effect */
+            transform: scale(1.1);
         }
 
         .btn::before {
@@ -174,61 +152,29 @@
             left: 50%;
             width: 300%;
             height: 300%;
-            background-color: #ffffff;
-            transition: all 0.4s ease;
             border-radius: 50%;
+            background-color: rgba(255,255,255,0.3);
             transform: translate(-50%, -50%) scale(0);
+            transition: all 0.4s ease;
         }
 
-        /* Expand the circle on hover */
         .btn:hover::before {
             transform: translate(-50%, -50%) scale(1);
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-us h2 {
-                font-size: 2rem;
-            }
-
-            .btn {
-                font-size: 1rem;
-                padding: 10px 18px;
-            }
         }
     </style>
 </head>
 <body>
+    <div class="background"><div class="stars"></div></div>
 
-    <!-- Live Background -->
-    <div class="background">
-        <div class="stars"></div>
-    </div>
-
-    <!-- Centered Header with Full-width Characters (No bold for Clan | Kv) -->
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clan | Kv</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Centered Header with Full-width Characters (No bold for Clan | Kv) -->
     <div class="header">
+        <img src="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=128" alt="Clan Kv Logo">
         <h1>Ｃｌａｎ | Ｋｖ</h1>
     </div>
 
     <div class="about-us">
         <h2 class="rgb-text">О нас</h2>
-        <p class="rgb-text">Наши самые популярные инжекторы — <strong>Swift, Velocity, Solara V3</strong>, универсальные читы которые поддерживают широкий спектр режимов таких как: trident survival v5, fallen survival, и lone survival. Они предоставляют игрокам сильное преимущество над другими игроками. Эти читы делают ваш игровой процесс более захватывающим и интересным.</p>
-        <p class="rgb-text">Узнайте больше о Swift, Velocity, Solara V3 или скачайте его прямо сейчас, кликнув по кнопкам ниже.</p>
+        <p class="rgb-text">Наши самые популярные инжекторы — <strong>Swift, Velocity, Xeno</strong>, универсальные читы которые поддерживают широкий спектр режимов таких как: Trident Survival v5, Fallen Survival и Lone Survival. Они предоставляют игрокам сильное преимущество над другими. Эти читы делают игровой процесс более захватывающим и интересным.</p>
+        <p class="rgb-text">Узнайте больше о Swift, Velocity, Xeno или скачайте их прямо сейчас, кликнув по кнопкам ниже.</p>
         <div class="btn-group">
             <a href="https://scp132.github.io/Learnmore.html" class="btn">Узнать больше</a>
             <a href="https://scp132.github.io/Download.html" class="btn">Скачать</a>
