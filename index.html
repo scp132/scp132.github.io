@@ -14,16 +14,17 @@
             font-family: Arial, sans-serif;
             color: white;
             overflow: hidden;
-            background-color: black;
+            background-color: #001f3f; /* Тёмно-синий фон */
         }
 
+        /* Live Background */
         .background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, #6a0dad, #0000ff);
+            background: radial-gradient(circle at center, #0074D9, #001f3f); /* Синий → тёмный синий */
             background-size: 200% 200%;
             animation: gradientBackground 10s ease infinite;
             z-index: -1;
@@ -52,30 +53,25 @@
             to { transform: translateX(-50%) translateY(-50%); }
         }
 
+        /* Header */
         .header {
             display: flex;
             flex-direction: column;
             align-items: center;
             height: 20vh;
             text-align: center;
-        }
-
-        .header img {
-            width: 70px;
-            height: 90px;
-            border-radius: 20px;
-            margin-bottom: 15px;
+            margin-top: 20px; /* Иконка чуть ниже */
         }
 
         .header h1 {
             font-size: 4rem;
-            background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+            background: linear-gradient(90deg, #00cfff, #0074D9); /* Голубой → синий */
             background-size: 400% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: rgbText 5s infinite linear;
             margin: 0;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
             font-family: "Courier New", monospace;
         }
 
@@ -86,13 +82,19 @@
         }
 
         .rgb-text {
-            background: linear-gradient(90deg, #5e2c82, #752ea6, #a86dff, #752ea6, #5e2c82);
+            background: linear-gradient(90deg, #00cfff, #66d9ff, #0074D9, #66d9ff, #00cfff);
             background-size: 400% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: purpleRGB 5s infinite linear;
             font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+        }
+
+        @keyframes purpleRGB {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .about-us {
@@ -108,15 +110,15 @@
             letter-spacing: 5px;
             margin-bottom: 20px;
             font-weight: bold;
-            color: #d6336c;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            color: #00cfff;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
         }
 
         .about-us p {
             font-size: 1.2rem;
             font-weight: bold;
-            color: #ffb3e6;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            color: #b3ecff;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
         }
 
         .btn-group {
@@ -126,14 +128,16 @@
             margin-top: 20px;
         }
 
+        /* Button Styling */
         .btn {
             font-size: 1.2rem;
-            background-color: #5d2e85;
+            background-color: #0074D9; /* Синий */
             padding: 12px 20px;
             border-radius: 8px;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: inline-block;
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             position: relative;
@@ -141,7 +145,8 @@
         }
 
         .btn:hover {
-            background-color: #d6336c;
+            background-color: #00cfff; /* Голубой */
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
             transform: scale(1.1);
         }
 
@@ -152,33 +157,46 @@
             left: 50%;
             width: 300%;
             height: 300%;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.3);
-            transform: translate(-50%, -50%) scale(0);
+            background-color: #ffffff;
             transition: all 0.4s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
         }
 
         .btn:hover::before {
             transform: translate(-50%, -50%) scale(1);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .about-us h2 { font-size: 2rem; }
+            .btn { font-size: 1rem; padding: 10px 18px; }
         }
     </style>
 </head>
 <body>
-    <div class="background"><div class="stars"></div></div>
 
+    <!-- Background -->
+    <div class="background">
+        <div class="stars"></div>
+    </div>
+
+    <!-- Header -->
     <div class="header">
-        <img src="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=128" alt="Clan Kv Logo">
         <h1>Ｃｌａｎ | Ｋｖ</h1>
     </div>
 
+    <!-- About -->
     <div class="about-us">
         <h2 class="rgb-text">О нас</h2>
-        <p class="rgb-text">Наши самые популярные инжекторы — <strong>Swift, Velocity, Xeno</strong>, универсальные читы которые поддерживают широкий спектр режимов таких как: Trident Survival v5, Fallen Survival и Lone Survival. Они предоставляют игрокам сильное преимущество над другими. Эти читы делают игровой процесс более захватывающим и интересным.</p>
-        <p class="rgb-text">Узнайте больше о Swift, Velocity, Xeno или скачайте их прямо сейчас, кликнув по кнопкам ниже.</p>
+        <p class="rgb-text">Наши самые популярные инжекторы — <strong>Swift, Velocity, Xeno</strong>, универсальные читы которые поддерживают широкий спектр режимов таких как: trident survival v5, fallen survival, и lone survival. Они предоставляют игрокам сильное преимущество над другими игроками. Эти читы делают ваш игровой процесс более захватывающим и интересным.</p>
+        <p class="rgb-text">Узнайте больше о Swift, Velocity, Xeno или скачайте его прямо сейчас, кликнув по кнопкам ниже.</p>
         <div class="btn-group">
             <a href="https://scp132.github.io/Learnmore.html" class="btn">Узнать больше</a>
             <a href="https://scp132.github.io/Download.html" class="btn">Скачать</a>
         </div>
     </div>
+
 </body>
 </html>
