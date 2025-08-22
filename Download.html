@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скачать Solara V3</title>
+    <title>Скачать Xeno</title>
+    <!-- Новый favicon -->
+    <link rel="icon" href="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=512" type="image/png">
     <style>
         body {
             margin: 0;
@@ -20,29 +22,22 @@
             background-color: black;
         }
 
-        /* Живой фон */
-     .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, #6a0dad, #0000ff); /* Purple and Blue */
-    background-size: 200% 200%;
-    animation: gradientBackground 10s ease infinite;
-    z-index: -1;
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #6a0dad, #0000ff);
+            background-size: 200% 200%;
+            animation: gradientBackground 10s ease infinite;
+            z-index: -1;
         }
 
         @keyframes gradientBackground {
-            0% {
-                background-position: 100% 0%;
-            }
-            50% {
-                background-position: 0% 100%;
-            }
-            100% {
-                background-position: 100% 0%;
-            }
+            0% { background-position: 100% 0%; }
+            50% { background-position: 0% 100%; }
+            100% { background-position: 100% 0%; }
         }
 
         .background .stars {
@@ -58,19 +53,13 @@
         }
 
         @keyframes moveStars {
-            from {
-                transform: translateX(0) translateY(0);
-            }
-            to {
-                transform: translateX(-50%) translateY(-50%);
-            }
+            from { transform: translateX(0) translateY(0); }
+            to { transform: translateX(-50%) translateY(-50%); }
         }
 
-        /* Стиль заголовка */
         .header {
             text-align: center;
             margin-bottom: 40px;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
         }
 
         .header h1 {
@@ -85,18 +74,11 @@
         }
 
         @keyframes gradient-text {
-            0% {
-                background-position: 300% 0;
-            }
-            50% {
-                background-position: -300% 0;
-            }
-            100% {
-                background-position: 300% 0;
-            }
+            0% { background-position: 300% 0; }
+            50% { background-position: -300% 0; }
+            100% { background-position: 300% 0; }
         }
 
-        /* Контент */
         .content {
             background: rgba(0, 0, 0, 0.7);
             padding: 30px;
@@ -105,18 +87,6 @@
             width: 80%;
             max-width: 700px;
             text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .content:hover {
-            transform: scale(1.05); /* Легкое увеличение при наведении */
-        }
-
-        .content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .button-group {
@@ -134,38 +104,15 @@
             border-radius: 8px;
             color: white;
             text-decoration: none;
-            text-align: center;
-            transition: all 0.4s ease-in-out;
             min-width: 220px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            position: relative;
+            transition: all 0.3s ease-in-out;
         }
 
         .link-btn:hover {
             background-color: #d6336c;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
-            transform: scale(1.1); /* Эффект увеличения */
+            transform: scale(1.1);
         }
 
-        .link-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: #ffffff;
-            transition: all 0.4s ease;
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-        }
-
-        .link-btn:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Кнопка возврата (в верхнем левом углу) */
         .go-back {
             font-size: 1.2rem;
             background-color: #d6336c;
@@ -173,18 +120,11 @@
             border-radius: 8px;
             color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
             position: absolute;
             top: 20px;
             left: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
-        .go-back:hover {
-            background-color: #5d2e85;
-        }
-
-        /* Кнопка полного руководства */
         .full-guide {
             font-size: 1.2rem;
             background-color: #00f5ff;
@@ -192,17 +132,10 @@
             border-radius: 8px;
             color: white;
             text-decoration: none;
-            transition: all 0.3s ease;
             position: absolute;
             bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
-        .full-guide:hover {
-            background-color: #00aaff;
-        }
-
-        /* Стиль модального окна */
         .modal {
             display: none;
             position: fixed;
@@ -217,7 +150,7 @@
         }
 
         .modal-content {
-            background: linear-gradient(45deg, rgb(0, 255, 255), rgb(255, 0, 255)); /* RGB Градиент */
+            background: linear-gradient(45deg, cyan, magenta);
             padding: 30px;
             border-radius: 10px;
             color: white;
@@ -226,22 +159,8 @@
         }
 
         @keyframes modalAnimation {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .modal-content h2 {
-            margin-bottom: 20px;
-        }
-
-        .modal-content p {
-            margin-bottom: 30px;
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .modal .close,
@@ -253,96 +172,49 @@
             border-radius: 5px;
             color: white;
             margin: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .modal .close:hover,
-        .modal .open:hover {
-            background-color: #5d2e85;
-        }
-
-        /* Мобильная адаптивность */
-        @media (max-width: 480px) {
-            .content {
-                width: 90%;
-            }
-
-            .link-btn {
-                font-size: 0.9rem;
-                padding: 12px 20px;
-                min-width: 180px;
-            }
-
-            .go-back {
-                font-size: 1.1rem;
-            }
-
-            .full-guide {
-                font-size: 1rem;
-                padding: 10px 18px;
-            }
         }
     </style>
 </head>
 <body>
+    <div class="background"><div class="stars"></div></div>
 
-    <!-- Живой фон -->
-    <div class="background">
-        <div class="stars"></div>
-    </div>
-
-    <!-- Кнопка возврата -->
     <a href="https://scp132.github.io/" class="go-back">Вернуться</a>
-
-    <!-- Кнопка полного руководства -->
     <a href="https://discord.gg/YA7B6btW25" class="full-guide">Полное руководство</a>
 
-    <!-- Заголовок -->
     <div class="header">
-        <h1>Скачать Solara V3</h1>
+        <h1>Скачать Xeno</h1>
     </div>
 
-    <!-- Контент -->
     <div class="content">
         <h2>Выберите ссылку для скачивания</h2>
         <div class="button-group">
-            <a href="https://drive.usercontent.google.com/download?id=1-ygsfQJwYtR_cxmLvk4PM67qco_6ZLuy&export=download&authuser=0" class="link-btn" target="_blank">Google Drive (Без обновлений)</a>
-            <a href="https://discord.gg/YA7B6btW25" class="link-btn" target="_blank">Discord (Всегда обновляется)</a>
-            <a href="https://github.com/scp132/SolaraV3byClanKv" class="link-btn" target="_blank">GitHub (Всегда обновляется)</a>
+            <a href="https://drive.usercontent.google.com/download?id=1-ygsfQJwYtR_cxmLvk4PM67qco_6ZLuy&export=download&authuser=0" class="link-btn" target="_blank">Google Drive</a>
+            <a href="https://discord.gg/YA7B6btW25" class="link-btn" target="_blank">Discord</a>
+            <a href="https://github.com/scp132/XenoByClanKv" class="link-btn" target="_blank">GitHub</a>
             <a href="#" class="link-btn" id="mediafireBtn">Mediafire (Пароль: Clankv)</a>
         </div>
     </div>
 
-    <!-- Модальное окно (предупреждение для Mediafire) -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <h2>Предупреждение</h2>
-            <p>Файл представляет собой ZIP-архив и защищен паролем. Пароль: <strong>Clankv</strong>.</p>
+            <p>Файл — ZIP-архив и защищён паролем. Пароль: <strong>Clankv</strong>.</p>
             <button class="close" id="closeModal">Закрыть</button>
             <a href="https://www.mediafire.com/file/oapi8w2rp9o577y/Bootstrapper_v2.18.zip/file" class="open" target="_blank">Открыть Mediafire</a>
         </div>
     </div>
 
     <script>
-        // Получаем модальное окно для Mediafire
         var modal = document.getElementById("myModal");
-
-        // Получаем кнопку, которая открывает модальное окно
         var mediafireBtn = document.getElementById("mediafireBtn");
-
-        // Получаем элемент <span>, который закрывает модальное окно
         var closeModal = document.getElementById("closeModal");
 
-        // Когда пользователь нажимает на кнопку, открываем модальное окно
         mediafireBtn.onclick = function () {
             modal.style.display = "flex";
         }
-
-        // Когда пользователь нажимает на <span> (x), закрываем модальное окно
         closeModal.onclick = function () {
             modal.style.display = "none";
         }
     </script>
-
 </body>
 </html>
