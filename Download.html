@@ -4,31 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Скачать Xeno</title>
-    <!-- Новый favicon -->
     <link rel="icon" href="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=512" type="image/png">
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
             overflow: hidden;
-            font-weight: bold;
-            background-color: black;
+            background-color: #001f3f;
         }
 
         .background {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, #6a0dad, #0000ff);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #0074D9, #001f3f);
             background-size: 200% 200%;
             animation: gradientBackground 10s ease infinite;
             z-index: -1;
@@ -42,10 +32,8 @@
 
         .background .stars {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
+            top: 0; left: 0;
+            width: 200%; height: 200%;
             background: url('https://www.transparenttextures.com/patterns/stardust.png');
             background-size: cover;
             opacity: 0.5;
@@ -59,24 +47,23 @@
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin: 40px 0;
         }
 
         .header h1 {
             font-size: 3.5rem;
-            font-weight: bold;
-            background: linear-gradient(90deg, #ff00f7, #4800ff);
-            background-size: 300% 100%;
+            background: linear-gradient(90deg, #00cfff, #0074D9);
+            background-size: 400% 100%;
             -webkit-background-clip: text;
-            color: transparent;
-            animation: gradient-text 5s linear infinite;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            -webkit-text-fill-color: transparent;
+            animation: rgbText 5s infinite linear;
+            text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
         }
 
-        @keyframes gradient-text {
-            0% { background-position: 300% 0; }
-            50% { background-position: -300% 0; }
-            100% { background-position: 300% 0; }
+        @keyframes rgbText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .content {
@@ -84,9 +71,10 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-            width: 80%;
-            max-width: 700px;
+            width: 80%; max-width: 700px;
+            margin: 0 auto;
             text-align: center;
+            font-weight: bold;
         }
 
         .button-group {
@@ -99,7 +87,7 @@
 
         .link-btn {
             font-size: 1.1rem;
-            background-color: #5d2e85;
+            background-color: #0074D9;
             padding: 15px 30px;
             border-radius: 8px;
             color: white;
@@ -109,52 +97,36 @@
         }
 
         .link-btn:hover {
-            background-color: #d6336c;
+            background-color: #00cfff;
             transform: scale(1.1);
         }
 
-        .go-back {
+        .go-back, .full-guide {
             font-size: 1.2rem;
-            background-color: #d6336c;
+            background-color: #0074D9;
             padding: 12px 20px;
             border-radius: 8px;
             color: white;
             text-decoration: none;
             position: absolute;
-            top: 20px;
-            left: 20px;
         }
 
-        .full-guide {
-            font-size: 1.2rem;
-            background-color: #00f5ff;
-            padding: 12px 20px;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-            position: absolute;
-            bottom: 20px;
-        }
+        .go-back { top: 20px; left: 20px; }
+        .full-guide { bottom: 20px; left: 50%; transform: translateX(-50%); }
 
         .modal {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center; align-items: center;
             z-index: 9999;
         }
 
         .modal-content {
-            background: linear-gradient(45deg, cyan, magenta);
-            padding: 30px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
+            background: linear-gradient(45deg, #00cfff, #0074D9);
+            padding: 30px; border-radius: 10px;
+            color: white; text-align: center;
             animation: modalAnimation 2s ease;
         }
 
@@ -163,12 +135,11 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        .modal .close,
-        .modal .open {
+        .modal .close, .modal .open {
             font-size: 1.2rem;
             cursor: pointer;
             padding: 10px 20px;
-            background-color: #d6336c;
+            background-color: #0074D9;
             border-radius: 5px;
             color: white;
             margin: 10px;
@@ -181,9 +152,7 @@
     <a href="https://scp132.github.io/" class="go-back">Вернуться</a>
     <a href="https://discord.gg/YA7B6btW25" class="full-guide">Полное руководство</a>
 
-    <div class="header">
-        <h1>Скачать Xeno</h1>
-    </div>
+    <div class="header"><h1>Скачать Xeno</h1></div>
 
     <div class="content">
         <h2>Выберите ссылку для скачивания</h2>
@@ -208,13 +177,8 @@
         var modal = document.getElementById("myModal");
         var mediafireBtn = document.getElementById("mediafireBtn");
         var closeModal = document.getElementById("closeModal");
-
-        mediafireBtn.onclick = function () {
-            modal.style.display = "flex";
-        }
-        closeModal.onclick = function () {
-            modal.style.display = "none";
-        }
+        mediafireBtn.onclick = () => modal.style.display = "flex";
+        closeModal.onclick = () => modal.style.display = "none";
     </script>
 </body>
 </html>
