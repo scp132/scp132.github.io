@@ -1,152 +1,122 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Узнать больше | Xeno</title>
-    <!-- Новый favicon -->
-    <link rel="icon" href="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=512" type="image/png">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2b2a2a, #1f1d1d);
-            color: white;
-            overflow-x: hidden;
-            text-align: center;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Узнать больше | Xeno</title>
+<link rel="icon" href="https://cdn.discordapp.com/icons/1237716982380367954/a7c03a7eb85d83575361f1dfec98b6ba.png?size=512" type="image/png">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+    background-color: #001f3f;
+}
 
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, #6a0dad, #0000ff);
-            background-size: 200% 200%;
-            animation: gradientBackground 10s ease infinite;
-            z-index: -1;
-        }
+.background {
+    position: fixed; top:0; left:0;
+    width:100%; height:100%;
+    background: radial-gradient(circle at center, #0074D9, #001f3f);
+    background-size: 200% 200%;
+    animation: gradientBackground 10s ease infinite;
+    z-index: -1;
+}
 
-        @keyframes gradientBackground {
-            0% { background-position: 100% 0%; }
-            50% { background-position: 0% 100%; }
-            100% { background-position: 100% 0%; }
-        }
+@keyframes gradientBackground {
+    0% { background-position: 100% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 100% 0%; }
+}
 
-        .header {
-            padding: 40px;
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, #ff0077, #fcbf49, #00d2d1);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: gradientText 5s infinite linear;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-        }
+.background .stars {
+    position: absolute; top:0; left:0;
+    width:200%; height:200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-size: cover;
+    opacity:0.5;
+    animation: moveStars 30s linear infinite;
+}
 
-        @keyframes gradientText {
-            0% { background-position: 100% 0%; }
-            50% { background-position: 0% 100%; }
-            100% { background-position: 100% 0%; }
-        }
+@keyframes moveStars {
+    from { transform: translateX(0) translateY(0); }
+    to { transform: translateX(-50%) translateY(-50%); }
+}
 
-        .content {
-            padding: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: left;
-        }
+.header {
+    padding: 40px;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #00cfff, #0074D9);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbText 5s infinite linear;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+}
 
-        .content h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ff66b2;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-        }
+@keyframes rgbText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        .content p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #c1c1c1;
-            margin-bottom: 20px;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-        }
+.content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
 
-        .content ul {
-            list-style: none;
-            padding-left: 0;
-            font-size: 1.2rem;
-            color: #f1f1f1;
-        }
+.content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00cfff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+}
 
-        .content ul li {
-            margin: 15px 0;
-        }
+.content p, .content ul li {
+    font-size: 1.2rem;
+    color: #b3ecff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+}
 
-        .btn {
-            display: inline-block;
-            font-size: 1.5rem;
-            background-color: #5d2e85;
-            padding: 15px 30px;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.content ul { list-style:none; padding-left:0; }
 
-        .btn:hover {
-            background-color: #d6336c;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            transform: scale(1.1);
-        }
+.btn {
+    display:inline-block;
+    font-size:1.5rem;
+    background-color:#0074D9;
+    padding:15px 30px;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+    transition: all 0.3s ease;
+}
 
-        .btn:active {
-            transform: scale(1);
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-    </style>
+.btn:hover { background-color:#00cfff; transform: scale(1.1); }
+</style>
 </head>
 <body>
-    <div class="background"></div>
-
-    <div class="header">
-        Узнайте больше о Swift, Velocity и Xeno
-    </div>
-
-    <div class="content">
-        <h2>Что такое Swift, Velocity, Xeno?</h2>
-        <p>Swift, Velocity, Xeno — универсальные читы, которые поддерживают широкий спектр режимов таких как: Trident Survival v5, Fallen Survival и Lone Survival. Они предоставляют игрокам сильное преимущество и делают процесс игры более захватывающим.</p>
-
-        <h2>Ключевые особенности:</h2>
-        <ul>
-            <li>Совместимость с широким спектром игр 🎮</li>
-            <li>Мгновенная активация ⚡</li>
-            <li>Гибкие настройки под ваши потребности ⚙️</li>
-            <li>Защита аккаунта и безопасность 🔒</li>
-            <li>Удобный интерфейс 🖥️</li>
-            <li>Высокая производительность 🏎️</li>
-        </ul>    
-
-        <h2>Почему стоит выбрать Swift, Velocity, Xeno?</h2>
-        <p>Эти инжекторы дают уникальные возможности, скорость и безопасность. Они незаменимы для геймеров, которые хотят играть с максимальным комфортом.</p>
-        <a href="https://scp132.github.io/" class="btn">Вернуться назад</a>
-    </div>
+<div class="background"><div class="stars"></div></div>
+<div class="header">Узнайте больше о Swift, Velocity и Xeno</div>
+<div class="content">
+    <h2>Что такое Swift, Velocity, Xeno?</h2>
+    <p>Swift, Velocity, Xeno — универсальные читы, которые поддерживают широкий спектр режимов таких как: Trident Survival v5, Fallen Survival и Lone Survival. Они предоставляют игрокам сильное преимущество и делают процесс игры более захватывающим.</p>
+    <h2>Ключевые особенности:</h2>
+    <ul>
+        <li>Совместимость с широким спектром игр 🎮</li>
+        <li>Мгновенная активация ⚡</li>
+        <li>Гибкие настройки под ваши потребности ⚙️</li>
+        <li>Защита аккаунта и безопасность 🔒</li>
+        <li>Удобный интерфейс 🖥️</li>
+        <li>Высокая производительность 🏎️</li>
+    </ul>
+    <h2>Почему стоит выбрать Swift, Velocity, Xeno?</h2>
+    <p>Эти инжекторы дают уникальные возможности, скорость и безопасность. Они незаменимы для геймеров, которые хотят играть с максимальным комфортом.</p>
+    <a href="https://scp132.github.io/" class="btn">Вернуться назад</a>
+</div>
 </body>
 </html>
