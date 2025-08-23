@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clan Kv | Proxy Checker</title>
+<style>
+    body { margin:0; font-family: Arial; color:white; background:#001f3f; }
+    .background { position:fixed; top:0; left:0; width:100%; height:100%;
+        background: radial-gradient(circle at center, #0074D9, #001f3f);
+        background-size:200% 200%; animation: bg 10s ease infinite; z-index:-1; }
+    @keyframes bg {0%{background-position:100% 0%}50%{background-position:0% 100%}100%{background-position:100% 0%}}
+    .header { text-align:center; margin:30px; }
+    .header h1 { font-size:3rem; background:linear-gradient(90deg,#00cfff,#0074D9);
+        -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:rgbText 5s linear infinite;}
+    @keyframes rgbText {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .box { max-width:800px; margin:0 auto; background:rgba(0,0,0,0.4); padding:20px; border-radius:10px; }
+    textarea { width:100%; height:200px; border-radius:8px; padding:10px; font-family:monospace; }
+    button { margin-top:10px; padding:10px 20px; border:none; border-radius:8px;
+        background:#0074D9; color:white; font-weight:bold; cursor:pointer; }
+    button:hover { background:#00cfff; }
+    .result { margin-top:20px; white-space:pre-wrap; font-family:monospace; }
+</style>
+</head>
+<body>
+<div class="background"></div>
+<div class="header"><h1>Ｐｒｏｘｙ Ｃｈｅｃｋｅｒ</h1></div>
+<div class="box">
+    <p>Вставьте список прокси (HTTP/HTTPS):</p>
+    <textarea id="proxyInput"></textarea>
+    <button onclick="checkProxies()">Проверить</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+async function checkProxies() {
+    const input = document.getElementById("proxyInput").value.trim().split("\n");
+    const resultDiv = document.getElementById("result");
+    resultDiv.textContent = "Проверка...\n";
+
+    for (let proxy of input) {
+        try {
+            let controller = new AbortController();
+            let timeout = setTimeout(() => controller.abort(), 3000);
+            let res = await fetch("https://www.google.com", {
+                proxy: proxy,
+                signal: controller.signal
+            });
+            clearTimeout(timeout);
+            if (res.ok) {
+                resultDiv.textContent += `[OK] ${proxy}\n`;
+            } else {
+                resultDiv.textContent += `[BAD] ${proxy}\n`;
+            }
+        } catch {
+            resultDiv.textContent += `[BAD] ${proxy}\n`;
+        }
+    }
+}
+</script>
+</body>
+</html>
