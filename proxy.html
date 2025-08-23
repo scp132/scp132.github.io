@@ -42,7 +42,7 @@ async function checkProxies() {
         try {
             let controller = new AbortController();
             let timeout = setTimeout(() => controller.abort(), 3000);
-            let res = await fetch("https://www.google.com", {
+            let res = await fetch("https://github.com", {
                 proxy: proxy,
                 signal: controller.signal
             });
